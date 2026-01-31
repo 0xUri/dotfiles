@@ -1,0 +1,60 @@
+# Terminal Custom
+alias ip='/usr/sbin/ip -c'
+alias ls="/usr/bin/lsd -l" 
+alias bat="batcat"
+
+# RDP
+alias maldev="xfreerdp3 /u:Redteam /p:XX /v:192.168.9.45 /cert:ignore /dynamic-resolution /drive:shareit,/home/red/Shareit" 
+alias win="xfreerdp3 /u:Redteam /p:XX /v:192.168.9.16 /cert:ignore /dynamic-resolution /drive:shareit,/home/red/Shareit"
+
+# Usefull
+alias ds="cd /home/red/Desktop"
+alias dl="cd /home/red/Downloads"
+alias dc="cd /home/red/Documents"
+alias pyenv="source /opt/pyenv//bin/activate"
+
+
+# Network VPN
+alias gohome="sudo wg-quick up RedNetwork"
+alias nohome="sudo wg-quick down RedNetwork"
+
+
+# Usefull Update
+alias maj="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y"
+
+# Hacking VPN
+alias killvpn="sudo killall openvpn"
+alias cptsvpn="sudo openvpn /etc/openvpn/cpts.ovpn &"
+alias vlvpn="sudo openvpn /etc/openvpn/vl.ovpn &"
+alias htbvpn="sudo openvpn /etc/openvpn/htb.ovpn &"
+alias crtpvpn="sudo openvpn /etc/openvpn/crtplab.ovpn"
+
+# Hacking Scans
+alias scanfull='nmap --open -A -p- -n -Pn -vv -T5 -oA'
+alias scanport='nmap -sS --open -p- -n -Pn -vv -T5 -oA'
+
+# Hacking Pivoting
+alias ligoint='sudo ip tuntap add user root mode tun ligolo && sudo ip link set ligolo up'
+alias ligoup='sudo /opt/toolkit/Linux/ligolo-ng/tools/proxy  -selfcert -laddr 0.0.0.0:4444'
+alias ligodel='sudo ip link delete ligolo'
+
+# Hacking Up 
+alias wp='pyenv && updog -p 8000'
+alias smbup='impacket-smbserver share . -smb2support -ip'
+
+# Hacking Writeup Report
+alias setup='mkdir -p Enumeration Foothold Creds Privesc Findings && touch Enumeration/{Global.md,Users.md,Nmap.md} Creds/creds.md'
+
+# Hacking Tools Kit
+alias vl="cd /opt/CTF/vulnlab"
+alias htb="cd /opt/CTF/HackTheBox"
+alias tl="cd /opt/toolkit"
+alias lintl="/opt/toolkit/Linux"
+alias adtl="cd /opt/toolkit/Windows/Active_Directory/ADDS"
+alias wintl="cd /opt/toolkit/Windows/"
+alias ncsh="nc -lvnp 9001"
+
+# Exegol
+alias exegol='sudo -E /home/red/.local/bin/exegol'
+autoload -U compinit && compinit
+eval "$(register-python-argcomplete --no-defaults exegol)"
