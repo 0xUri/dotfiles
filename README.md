@@ -2,9 +2,12 @@
 
 My personal Linux setup for pentesting & daily use.
 
-![Desktop](screenshots/Desktop.png)
+![Desktop](screenshots/desktop.png)
 
 ## Screenshots
+
+### SDDM Login
+![SDDM](screenshots/sddm.png)
 
 ### Terminal
 ![Terminal](screenshots/Terminal.png)
@@ -21,6 +24,7 @@ My personal Linux setup for pentesting & daily use.
 |-----------|-------|
 | **OS** | KDE neon (Plasma 6.5.5) |
 | **WM** | KWin |
+| **Display Manager** | SDDM ([SilentSDDM](https://github.com/uiriansan/SilentSDDM.git)) |
 | **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | **Shell** | ZSH 5.9 |
 | **Theme** | Catppuccin Mocha (Kitty) / Dracula-alt-style (GTK) |
@@ -41,7 +45,8 @@ dotfiles/
 ├── zshrc/
 │   └── .zsh_aliases        # Shell aliases
 ├── Wallpapers/
-│   └── wallhaven-lyz3d2.png  # Desktop wallpaper
+│   ├── wallhaven-lyz3d2.png  # Old wallpaper
+│   └── wallhaven-e76pew.png  # Current desktop wallpaper (space theme)
 ├── screenshots/
 └── install.sh
 ```
@@ -68,6 +73,17 @@ A multi-line prompt with:
 
 Shortcuts for navigation, system updates, VPN management, network scanning, pivoting (Ligolo-NG), CTF platforms (HackTheBox, Vulnlab), report setup, and more.
 
+### SDDM Theme
+
+Using [SilentSDDM](https://github.com/uiriansan/SilentSDDM.git) - a minimalist login theme with a misty forest background.
+
+To install:
+```bash
+git clone https://github.com/uiriansan/SilentSDDM.git
+sudo cp -r SilentSDDM /usr/share/sddm/themes/
+sudo nano /etc/sddm.conf  # Set Current=SilentSDDM under [Theme]
+```
+
 ## Prerequisites
 
 Install a [Nerd Font](https://www.nerdfonts.com/) for the icons to render properly. This setup uses **Iosevka Nerd Font**:
@@ -85,9 +101,10 @@ unzip Iosevka.zip -d Iosevka
 fc-cache -fv
 ```
 
-You also need these tools for the aliases to work:
+You also need these tools:
 - [lsd](https://github.com/lsd-rs/lsd) (aliased as `ls`)
 - [batcat](https://github.com/sharkdp/bat) (aliased as `bat`)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch) (system info - using `examples/13.jsonc` theme)
 - [Oh My ZSH](https://ohmyz.sh/) or a ZSH framework that supports custom themes
 
 ## Installation
