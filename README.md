@@ -28,7 +28,7 @@ My personal Linux setup for pentesting & daily use.
 | **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | **Shell** | ZSH 5.9 |
 | **Theme** | Catppuccin Mocha (Kitty) / Dracula-alt-style (GTK) |
-| **Icons** | Fluent-red-dark |
+| **Icons** | Beautysolar |
 | **Font** | Iosevka Nerd Font |
 | **Pentest Env** | [Exegol](https://exegol.com) (Docker-based, replaces Kali) |
 
